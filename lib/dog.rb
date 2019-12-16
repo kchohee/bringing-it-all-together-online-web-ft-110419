@@ -35,6 +35,8 @@ class Dog
   def self.create
   end
   def self.new_from_db
+    dog = Dog.new(name: row[1], breed: row[2], id: row[0])
+    dog
   end
   def self.find_by_id
   end
