@@ -68,7 +68,7 @@ class Dog
     FROM dogs
     WHERE name = ?
     SQL
-    dog = DB[:conn].execute(sql, dog_name)[0]
+    dog = DB[:conn].execute(sql, name)[0]
     Dog.new_from_db(dog)
   end
   def update
