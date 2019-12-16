@@ -50,8 +50,8 @@ class Dog
   end
   def self.find_or_create_by(name:,breed:)
     sql = <<-SQL
-      SELECT * 
-      FROM dogs 
+      SELECT *
+      FROM dogs
       WHERE name = ? AND breed = ?
     SQL
     result = DB[:conn].execute(sql, name, breed)[0]
@@ -64,8 +64,8 @@ class Dog
   end
   def self.find_by_name(name:)
     sql = <<-SQL
-    SELECT * 
-    FROM dogs 
+    SELECT *
+    FROM dogs
     WHERE name = ?
     SQL
     dog = DB[:conn].execute(sql, dog_name)[0]
